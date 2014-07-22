@@ -2,8 +2,16 @@
 <html>
   <head>
     <title>Movie Search Results</title>
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
   </head>
   <body>
-    Replace me with a list of movies
+    <div class="container">
+      <h1>Results</h1>
+      <ul>
+        <% movieList.forEach(function (movie) { %>
+        <li><%= movie.Title %></li>
+        <% })%>
+      </ul>
+    </div>
   </body>
 </html>

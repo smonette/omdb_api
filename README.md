@@ -29,3 +29,9 @@ To be continued...
 
 - http://omdbapi.com/
 - https://github.com/mikeal/request
+
+
+## Notes
+- The app.js file is basically a bare bones express template.
+
+- Remember to install express and ejs locally! Even if there's a dependancy in the package.json file, it's not likely that they'd have the included the node modules folder.
