@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Movie Search Results</title>
+    <title>Search Results</title>
     <link rel="stylesheet" type="text/css" href="/styles/style.css">
   </head>
   <body>
@@ -9,7 +9,9 @@
       <h1>Results</h1>
       <ul>
         <% movieList.forEach(function (movie) { %>
-        <li><%= movie.Title %></li>
+        <li>
+            <a href="movies/<%= movie.imdbID %>"><%= movie.Title %> </a>
+        </li>
         <% })%>
       </ul>
     </div>
