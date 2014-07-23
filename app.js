@@ -3,6 +3,8 @@ var request = require("request");
 
 var app = express();
 
+var faves = [];
+
 app.use("/styles", express.static(__dirname + '/styles'));
   app.set('view engine', 'ejs');
 
@@ -17,7 +19,7 @@ app.get('/search', function (req, res) {
         if (!error) {
             var data = JSON.parse(body);
             res.render("site/results", {movieList: data.Search || []});
-        }
+        } 
     });
 });
 
@@ -30,6 +32,11 @@ app.get('/movies/:id', function (req, res) {
             res.render("movies/index", {details: data || []});
         }
     });
+});
+
+app.post('/later', function(req, res){
+  faves.push(req.body.details);
+  res.render('site/later', {faves: faves});
 });
 
 app.listen(3000);

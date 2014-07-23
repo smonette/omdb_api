@@ -5,19 +5,33 @@
     <link rel="stylesheet" type="text/css" href="/styles/style.css">
   </head>
   <body>
-    <div class="container">
+    <header>
+      <h1><a href="/">OMDB Movie Search</a></h1>
+    </header>
 
-      <h1><%= details.Title %></h1>
+    <div class="container">
+      <h2><%= details.Title %></h2>
+      
+      <p><strong>Director:</strong> <%= details.Director %></p>
+      <p><strong>Staring:</strong> <%= details.Actors %></p>
+
+      <p> <%= details.Plot %> </p>
       <ul>
-        <li><b>Director:</b> <%= details.Director %></li>
-        <li><b>Year:</b> <%= details.Year %></li>
-        <li><b>Rated:</b> <%= details.Rated %></li>
-        <li><b>Released:</b> <%= details.Released %></li>
-        <li><b>Runtime:</b> <%= details.Runtime %></li>
-        <li><b>Genre:</b> <%= details.Genre %></li>
-        <li><b>IMDb Rating:</b> <%= details.imdbRating %></li>
-        <li><b>Country:</b> <%= details.Country %></li>
+        <li><strong>Year:</strong> <%= details.Year %></li>
+        <li><strong>Rated:</strong> <%= details.Rated %></li>
+        <li><strong>Released:</strong> <%= details.Released %></li>
+        <li><strong>Runtime:</strong> <%= details.Runtime %></li>
+        <li><strong>Genre:</strong> <%= details.Genre %></li>
+        <li><strong>IMDb Rating:</strong> <%= details.imdbRating %></li>
+        <li><strong>Language:</strong> <%= details.Language %></li>
+        <li><strong>Country:</strong> <%= details.Country %></li>
+        <li><strong>Awards:</strong> <%= details.Awards %></li>
       </ul>
+      
+      <form action="/site/later" method="POST">
+        <button class="saveButton">Save for Later</button>
+      </form>
+
     </div>
   </body>
 </html>
