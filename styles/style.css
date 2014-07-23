@@ -74,7 +74,11 @@ form input.textField {
   margin: 5px 0;
 }
 
-
+img.poster {
+  float: left;
+  max-width: 300px;
+  margin: 20px 50px 100px 0;
+}
 
 
 

@@ -10,7 +10,9 @@
     </header>
 
     <div class="container">
+      <img src="<%= details.Poster %>" class="poster"/>
       <h2><%= details.Title %></h2>
+
       
       <p><strong>Director:</strong> <%= details.Director %></p>
       <p><strong>Staring:</strong> <%= details.Actors %></p>
@@ -28,7 +30,7 @@
         <li><strong>Awards:</strong> <%= details.Awards %></li>
       </ul>
       
-      <form action="/site/later" method="POST">
+      <form action="/site/later/<%= details.Title %>?_method=put" method="POST">
         <button class="saveButton">Save for Later</button>
       </form>
 

@@ -1,5 +1,8 @@
-var express = require("express");
-var request = require("request");
+var express = require('express');
+  bodyParser = require('body-parser');
+  methodOverride = require('method-override');
+  app = express();
+  request = require("request");
 
 var app = express();
 
@@ -7,6 +10,14 @@ var faves = [];
 
 app.use("/styles", express.static(__dirname + '/styles'));
   app.set('view engine', 'ejs');
+    // middlewear for parsing for data
+  // looks at body of response
+  app.use(bodyParser.urlencoded());
+
+  //middlewear to handle post requests
+  // for PUT and DELETE
+  app.use(methodOverride("_method"))
+
 
 app.get('/', function(req, res){
   res.render('site/index');
@@ -38,6 +49,12 @@ app.post('/later', function(req, res){
   faves.push(req.body.details);
   res.render('site/later', {faves: faves});
 });
+
+
+
+
+
+
 
 app.listen(3000);
 
